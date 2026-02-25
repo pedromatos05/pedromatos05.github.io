@@ -533,6 +533,28 @@ body {
   }
 }
 
+/* Card pop-in animation */
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-pop {
+  opacity: 0;
+}
+
+.card-pop.popped {
+  animation: cardPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--pop-delay, 0ms);
+}
+
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);

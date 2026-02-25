@@ -309,17 +309,15 @@ if (skillCards.length) skillObserver.observe(skillCards[0].closest('.skills-wrap
 
 
 /* ===========================
-   PROJECT CARDS STAGGER
+   PROJECT CARDS POP-IN
    =========================== */
-const projectCards = document.querySelectorAll('.project-card');
-const projObserver = new IntersectionObserver(entries => {
+const cardPopEls = document.querySelectorAll('.card-pop');
+const cardPopObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            projectCards.forEach((card, i) => {
-                setTimeout(() => card.classList.add('visible'), i * 100);
-            });
-            projObserver.disconnect();
+            cardPopEls.forEach(card => card.classList.add('popped'));
+            cardPopObserver.disconnect();
         }
     });
-}, { threshold: 0.1 });
-if (projectCards.length) projObserver.observe(projectCards[0].closest('.projects-grid'));
+}, { threshold: 0.08 });
+if (cardPopEls.length) cardPopObserver.observe(cardPopEls[0].closest('.projects-grid'));
