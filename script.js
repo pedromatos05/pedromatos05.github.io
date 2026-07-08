@@ -179,9 +179,9 @@ window.addEventListener('resize', () => {
    TYPEWRITER EFFECT
    =========================== */
 const roles = [
+    'Cybersecurity Enthusiast',
+    'Information Systems Engineering Student',
     'Python Developer',
-    'Software Engineer',
-    'Data Enthusiast',
     'Problem Solver',
 ];
 let roleIdx = 0;
